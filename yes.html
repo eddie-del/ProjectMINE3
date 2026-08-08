@@ -6,6 +6,7 @@
   <title>Project:M.I.N.E-3</title>
   <link rel="stylesheet" href="./style.css">
 </head>
+
 <body>
   <div class="container">
     <div class="tenor-gif-embed" data-postid="16590363" data-share-method="host" data-aspect-ratio="1.2749" data-width="100%"><a href="https://tenor.com/view/mochi-mochi-peach-cat-kiss-heart-cat-kiss-cheek-gif-16590363">Mochi Mochi Peach Cat Kiss GIF</a>from <a href="https://tenor.com/search/mochi+mochi+peach+cat-gifs">Mochi Mochi Peach Cat GIFs</a></div> <script type="text/javascript" async src="https://tenor.com/embed.js"></script>
@@ -14,14 +15,77 @@
     <p>DM me here: <a href="https://www.instagram.com/_waka0_0/">waka0_0</a> hahaha</p>
 
   </div>
-  <script>
-  if (sessionStorage.getItem("visitedYes")) {
-    // Already visited once, redirect back
-    window.location.href = "index.html";
-  } else {
-    // First time visit, mark it
-    sessionStorage.setItem("visitedYes", "true");
-  }
+
+
+<div id="effects-container"></div>
+
+<script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+<script>
+  window.onload = () => {
+    const overlay = document.getElementById("effects-container");
+
+    // Looping confetti bursts
+    function launchConfetti() {
+      confetti({
+        particleCount: 150,
+        spread: 120,
+        origin: { y: 0.9 },
+        colors: ["#ff0000", "#ff69b4", "#ffffff", "#ffd700"]
+      });
+    }
+    launchConfetti();
+    setInterval(launchConfetti, 3000);
+
+    // Spawn multiple gradient hearts
+    for (let i = 0; i < 20; i++) {
+      const svgNS = "http://www.w3.org/2000/svg";
+      const heart = document.createElementNS(svgNS, "svg");
+      heart.setAttribute("viewBox", "0 0 32 29");
+      heart.classList.add("heart");
+      heart.style.left = `${Math.random() * 100}%`;
+      heart.style.animationDelay = `${i * 0.5}s`;
+
+      // Gradient definition
+      const defs = document.createElementNS(svgNS, "defs");
+      const grad = document.createElementNS(svgNS, "linearGradient");
+      const gradId = "grad" + i;
+      grad.setAttribute("id", gradId);
+      grad.setAttribute("x1", "0%");
+      grad.setAttribute("y1", "0%");
+      grad.setAttribute("x2", "0%");
+      grad.setAttribute("y2", "100%");
+
+      const stop1 = document.createElementNS(svgNS, "stop");
+      stop1.setAttribute("offset", "0%");
+      stop1.setAttribute("stop-color", "#ff0000");
+      const stop2 = document.createElementNS(svgNS, "stop");
+      stop2.setAttribute("offset", "100%");
+      stop2.setAttribute("stop-color", "#ffffff");
+
+      grad.appendChild(stop1);
+      grad.appendChild(stop2);
+      defs.appendChild(grad);
+
+      // Heart path
+      const path = document.createElementNS(svgNS, "path");
+      path.setAttribute("d", "M23.6,0c-3.4,0-6.4,2.1-7.6,5.1C14.8,2.1,11.8,0,8.4,0C3.8,0,0,3.8,0,8.4c0,9.2,16,20.6,16,20.6s16-11.4,16-20.6C32,3.8,28.2,0,23.6,0z");
+      path.setAttribute("fill", `url(#${gradId})`);
+
+      heart.appendChild(defs);
+      heart.appendChild(path);
+      overlay.appendChild(heart);
+
+      // Remove after animation ends
+      setTimeout(() => heart.remove(), 13000);
+    }
+  };
 </script>
+
+  <script>
+    // Detect reload using PerformanceNavigationTiming
+    if (performance.getEntriesByType("navigation")[0].type === "reload") {
+      window.location.href = "index.html";
+    }
+  </script>
 </body>
 </html>
