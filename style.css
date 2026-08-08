@@ -11,8 +11,21 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: #ffe5e5;
+  background: linear-gradient(135deg, #ffdee9 0%, #ff7eb9 100%);
+  animation: fadeIn 1s ease-in-out;
 }
+
+h1 {
+  font-size: 2rem;
+  color: #e91e63;
+  animation: heartbeat 1.5s infinite;
+}
+
+@keyframes heartbeat {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.1); }
+}
+
 
 .container {
   display: flex;
@@ -22,6 +35,12 @@ body {
   gap: 20px;
   max-width: 400px;
   margin: 20px;
+  animation: fadeIn 1s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
 }
 
 .container .tenor-gif-embed {
@@ -42,3 +61,66 @@ body {
   border-radius: 8px;
   box-shadow: 0.5rem 1rem 3rem hsl(0, 0%, 0%, 0.3);
 }
+
+.container .btn a:first-child {
+  background: linear-gradient(90deg, #ff4081, #f50057);
+  color: white;
+  box-shadow: 0 0 15px rgba(255,64,129,0.6);
+  animation: bounce 2s infinite;
+}
+
+@keyframes bounce {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-8px); }
+}
+
+.container .btn a:first-child:hover {
+  transform: scale(1.1);
+  box-shadow: 0 6px 15px rgba(255,64,129,0.6);
+}
+
+.container .btn a:last-child:hover {
+  animation: wiggle 0.5s ease-in-out;
+}
+
+@keyframes wiggle {
+  0% { transform: rotate(0deg); }
+  25% { transform: rotate(5deg); }
+  50% { transform: rotate(-5deg); }
+  75% { transform: rotate(5deg); }
+  100% { transform: rotate(0deg); }
+}
+
+.heart {
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  background: pink;
+  transform: rotate(45deg);
+  animation: float 8s infinite;
+}
+
+.heart::before,
+.heart::after {
+  content: "";
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  background: pink;
+  border-radius: 50%;
+}
+
+.heart::before { top: -10px; left: 0; }
+.heart::after { left: 10px; top: 0; }
+
+@keyframes float {
+  0% { transform: translateY(100vh) rotate(45deg); opacity: 1; }
+  100% { transform: translateY(-10vh) rotate(45deg); opacity: 0; }
+}
+
+#move-random {
+  position: relative;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+

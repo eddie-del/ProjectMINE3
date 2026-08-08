@@ -14,5 +14,14 @@
     <p>DM me here: <a href="https://www.instagram.com/_waka0_0/">waka0_0</a> hahaha</p>
 
   </div>
+  <script>
+  if (sessionStorage.getItem("visitedYes")) {
+    // Already visited once, redirect back
+    window.location.href = "index.html";
+  } else {
+    // First time visit, mark it
+    sessionStorage.setItem("visitedYes", "true");
+  }
+</script>
 </body>
 </html>
