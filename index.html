@@ -18,25 +18,38 @@
 
   <!-- Main content -->
   <div class="container">
-    <div class="tenor-gif-embed" data-postid="14240877" data-share-method="host" data-aspect-ratio="1" data-width="100%"><a href="https://tenor.com/view/what-mochi-peach-cat-gif-14240877">What Mochi Sticker</a></div> <script type="text/javascript" async src="https://tenor.com/embed.js"></script>
 
-    <h1>Pwede kaba ligawan?</h1>
-    <p>Sana pwede hahahahha</p>
-    <div class="btn">
+    <h1>Hello hoooman! zehahahah😈</h1>
+    <div class="tenor-gif-embed" data-postid="21113473" data-share-method="host" data-aspect-ratio="1.07023" data-width="100%"><a href="https://tenor.com/view/peach-goma-gif-21113473">Peach Goma GIF</a>from <a href="https://tenor.com/search/peach-gifs">Peach GIFs</a></div> <script type="text/javascript" async src="https://tenor.com/embed.js"></script>
+
+
+    <p>this dude wanna tell you something!😎</p>
+
+      <div class="btn">
+      <!-- Old buttons commented out for later -->
+      <!--
       <a href="/yes.html">oo</a>
       <a href="/no1.html">hindi</a>
+      -->
+
+      <!-- New simplified button -->
+      <a href="/no1.html" class="click-btn">
+        Click me 
+        <img src="img/arrow_right_alt_24dp_E3E3E3_FILL0_wght400_GRAD0_opsz24 (1).svg" alt="right arrow">
+      </a>
     </div>
-  </div>
+
 
   <script>
     window.onload = () => {
       setTimeout(() => {
         const logo = document.querySelector(".logo");
-        logo.classList.add("exit"); // rotate + fade all children
-        setTimeout(() => {
+        logo.classList.add("exit"); // trigger rotation + fade
+        // remove splash exactly when animation ends
+        logo.addEventListener("animationend", () => {
           document.getElementById("splash").style.display = "none";
-        }, 1500);
-      }, 5000);
+        });
+      }, 5000); // splash duration
     };
   </script>
 

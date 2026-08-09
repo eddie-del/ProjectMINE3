@@ -48,9 +48,69 @@ h1 {
   max-width: 200px;
 }
 
+.container p {
+  font-size: 1.1rem;
+  font-weight: 500;
+  margin-top: 10px;
+
+  /* Darker pastel tone */
+  color: #a0526d;/* muted plum/gray for readability */
+
+  /* Soft shadow for contrast */
+  text-shadow:
+    0 1px 2px rgba(0,0,0,0.2),
+    0 0 6px rgba(255,182,193,0.3);
+
+  letter-spacing: 1px;
+}
+
 .container .btn {
   display: flex;
   gap: 25px;
+}
+
+.click-btn {
+  text-decoration: none;
+  color: #fff;
+  background: #a0526d; /* dusty rose */
+  padding: 10px 25px;
+  border-radius: 8px;
+  box-shadow: 0.5rem 1rem 3rem rgba(0,0,0,0.2);
+  transition: transform 0.3s ease;
+  font-weight: 600;
+
+  /* Flexbox for text + icon alignment */
+  display: inline-flex;
+  align-items: center;   /* vertical centering */
+  justify-content: center; /* horizontal centering */
+  gap: 8px; /* space between text and arrow */
+}
+
+.click-btn img {
+  width: 20px;   /* adjust size if needed */
+  height: 20px;  /* keeps it consistent */
+  vertical-align: middle;
+}
+
+.click-btn:hover {
+  transform: scale(1.05);
+  background: #8b3f58; /* darker dusty rose */
+}
+
+/* Wiggle animation */
+@keyframes wiggle {
+  0%   { transform: rotate(0deg); }
+  25%  { transform: rotate(3deg); }
+  50%  { transform: rotate(-3deg); }
+  75%  { transform: rotate(3deg); }
+  100% { transform: rotate(0deg); }
+}
+
+/* Apply wiggle only on small screens */
+@media (max-width: 600px) {
+  .click-btn {
+    animation: wiggle 0.6s ease-in-out infinite;
+  }
 }
 
 .container .btn a {
@@ -67,6 +127,15 @@ h1 {
   color: white;
   box-shadow: 0 0 15px rgba(255,64,129,0.6);
   animation: bounce 2s infinite;
+}
+
+
+
+/* Apply wiggle only on small screens */
+@media (max-width: 600px) {
+  .click-btn {
+    animation: wiggle 0.6s ease-in-out infinite;
+  }
 }
 
 @keyframes bounce {
@@ -95,23 +164,9 @@ h1 {
   display: inline-block;
 }
 
-/* Bounce keyframe only handles vertical movement */
-@keyframes bounce {
-  0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(-8px); }
-}
-
 
 .container .btn a:last-child:hover {
   animation: wiggle 0.5s ease-in-out;
-}
-
-@keyframes wiggle {
-  0% { transform: rotate(0deg); }
-  25% { transform: rotate(5deg); }
-  50% { transform: rotate(-5deg); }
-  75% { transform: rotate(5deg); }
-  100% { transform: rotate(0deg); }
 }
 
 #effects-container {
@@ -357,14 +412,14 @@ body {
   100% { background: radial-gradient(circle at center, #000 60%, red 100%); box-shadow: 0 0 40px red; }
 }
 
-/* Exit rotation */
+/* Exit rotation + fade */
 @keyframes rotateOut {
   0%   { transform: rotate(0deg) scale(1); opacity: 1; }
-  100% { transform: rotate(360deg) scale(0.5); opacity: 0; }
+  100% { transform: rotate(720deg) scale(0.5); opacity: 0; }
 }
 
 .logo.exit {
-  animation: rotateOut 1.5s ease forwards;
+  animation: rotateOut 1s ease forwards; /* faster + synced */
 }
 
 
