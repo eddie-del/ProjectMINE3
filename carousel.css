@@ -21,8 +21,8 @@
 /* Card setup */
 .card {
   flex: 0 0 auto;
-  width: 400px;
-  height: 450px;
+  width: 200px;
+  height: 250px;
   perspective: 1000px;
 }
 .card-front img {
