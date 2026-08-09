@@ -188,3 +188,59 @@ h1 {
   }
 }
 
+.social-links {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  margin-top: 20px;
+}
+
+/* Common button style */
+.social-btn {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  width: 220px;              /* same width for all */
+  padding: 10px 15px;
+  border-radius: 8px;
+  background: #fff;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.social-btn img {
+  width: 28px;
+  height: 28px;
+  margin-right: 12px;        /* logo outside on left */
+}
+
+.social-btn a {
+  text-decoration: none;
+  font-weight: bold;
+  flex: 1;                   /* label fills remaining space */
+}
+
+/* Instagram colors */
+.ig-btn a {
+  color: #e1306c;
+}
+.ig-btn:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 15px rgba(225,48,108,0.5);
+}
+
+/* Facebook colors */
+.fb-btn a {
+  color: #1877f2;
+}
+.fb-btn:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 15px rgba(24,119,242,0.5);
+}
+
+.gif-container img {
+  max-width: 200px;   /* same size as your old embed */
+  height: auto;
+  display: block;
+  margin: 0 auto;
+}
