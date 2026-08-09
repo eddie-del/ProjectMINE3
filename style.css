@@ -16,7 +16,7 @@ body {
 }
 
 h1 {
-  font-size: 2rem;
+  font-size: 3rem;
   color: #e91e63;
   animation: heartbeat 1.5s infinite;
 }
@@ -33,7 +33,7 @@ h1 {
   text-align: center;
   align-items: center;
   gap: 20px;
-  max-width: 400px;
+  max-width: 600px;
   margin: 20px;
   animation: fadeIn 1s ease-in-out;
 }
@@ -45,11 +45,11 @@ h1 {
 
 .container .tenor-gif-embed {
   display: flex;
-  max-width: 200px;
+  max-width: 400px;
 }
 
 .container p {
-  font-size: 1.1rem;
+  font-size: 1.8rem;
   font-weight: 500;
   margin-top: 10px;
 
@@ -78,18 +78,21 @@ h1 {
   box-shadow: 0.5rem 1rem 3rem rgba(0,0,0,0.2);
   transition: transform 0.3s ease;
   font-weight: 600;
+  font-size: 25px;
 
   /* Flexbox for text + icon alignment */
   display: inline-flex;
   align-items: center;   /* vertical centering */
-  justify-content: center; /* horizontal centering */
-  gap: 8px; /* space between text and arrow */
+  justify-content: end; /* horizontal centering */
+  gap: 15px; /* space between text and arrow */
 }
 
 .click-btn img {
-  width: 20px;   /* adjust size if needed */
-  height: 20px;  /* keeps it consistent */
+  width:50px;   /* adjust size if needed */
+  height: 40px;  /* keeps it consistent */
   vertical-align: middle;
+  margin-left: 15px;
+  margin-right: 0;
 }
 
 .click-btn:hover {
@@ -323,8 +326,8 @@ body {
 
 /* Circle container */
 .logo {
-  width: 250px;
-  height: 250px;
+  width: 450px;
+  height: 450px;
   border-radius: 50%;
   background: radial-gradient(circle at center, #000 60%, red 100%);
   box-shadow: 0 0 40px red;
@@ -339,15 +342,15 @@ body {
 
 /* Text inside circle */
 .subtitle {
-  font-size: 1rem;
+  font-size: 2rem;
   background: linear-gradient(90deg, #00ffff, #ff00ff);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  margin-bottom: 15px;
+  margin-bottom: 20px;
 }
 
 .futuristic {
-  font-size: 1.8rem;
+  font-size: 3rem;
   color: cyan;
   letter-spacing: 3px;
   text-shadow: 
