@@ -7,17 +7,38 @@
   <link rel="stylesheet" href="./style.css">
 </head>
 <body>
-  <div class="container">
+  <!-- Splash screen -->
+  <div id="splash">
+    <div class="logo">
+      <h3 class="subtitle">waka 0_0</h3>
+      <h2 class="futuristic">PROJECT: M.I.N.E</h2>
+      <p class="designer">from: The Forge</p>
+    </div>
+  </div>
 
+  <!-- Main content -->
+  <div class="container">
     <div class="tenor-gif-embed" data-postid="14240877" data-share-method="host" data-aspect-ratio="1" data-width="100%"><a href="https://tenor.com/view/what-mochi-peach-cat-gif-14240877">What Mochi Sticker</a></div> <script type="text/javascript" async src="https://tenor.com/embed.js"></script>
 
     <h1>Pwede kaba ligawan?</h1>
     <p>Sana pwede hahahahha</p>
-
     <div class="btn">
       <a href="/yes.html">oo</a>
       <a href="/no1.html">hindi</a>
     </div>
   </div>
+
+  <script>
+    window.onload = () => {
+      setTimeout(() => {
+        const logo = document.querySelector(".logo");
+        logo.classList.add("exit"); // rotate + fade all children
+        setTimeout(() => {
+          document.getElementById("splash").style.display = "none";
+        }, 1500);
+      }, 5000);
+    };
+  </script>
+
 </body>
 </html>
