@@ -1,18 +1,18 @@
-function moveRandomEl(elm) {
-  elm.style.position = "absolute";
+// function moveRandomEl(elm) {
+//   elm.style.position = "absolute";
 
-  const minTop = window.innerHeight * 0.15;
-  const maxTop = window.innerHeight * 0.85 - elm.offsetHeight;
+//   const minTop = window.innerHeight * 0.15;
+//   const maxTop = window.innerHeight * 0.85 - elm.offsetHeight;
 
-  const minLeft = window.innerWidth * 0.05;
-  const maxLeft = window.innerWidth * 0.95 - elm.offsetWidth;
+//   const minLeft = window.innerWidth * 0.05;
+//   const maxLeft = window.innerWidth * 0.95 - elm.offsetWidth;
 
-  const top = Math.floor(Math.random() * (maxTop - minTop) + minTop);
-  const left = Math.floor(Math.random() * (maxLeft - minLeft) + minLeft);
+//   const top = Math.floor(Math.random() * (maxTop - minTop) + minTop);
+//   const left = Math.floor(Math.random() * (maxLeft - minLeft) + minLeft);
 
-  elm.style.top = top + "px";
-  elm.style.left = left + "px";
-}
+//   elm.style.top = top + "px";
+//   elm.style.left = left + "px";
+// }
 
 const noBtn = document.querySelector("#move-random"); 
 const yesBtn = document.querySelector("#oo-btn");

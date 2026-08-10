@@ -45,7 +45,7 @@ cards.forEach(card => {
 
 // Next button → go to no2.html
 nextBtn.addEventListener('click', () => {
-  window.location.href = "no2.html";
+  window.location.href = "no3.html";
 });
 
 window.addEventListener('load', () => {
